@@ -1,0 +1,137 @@
+---
+title: Quick Start Guide
+description: Get up and running with Alves Redol Café by setting up your account and creating your first documentation project.
+---
+
+## Prerequisites
+
+<Callout kind="info">
+
+Before starting, ensure you have:
+- A modern web browser (Chrome, Firefox, or Safari)
+- An email address for account verification
+- Optional: Git installed for advanced file uploads
+
+</Callout>
+
+## Sign Up and Log In
+
+Follow these steps to create your Alves Redol Café account.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to `https://dashboard.example.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Your Details" icon="user">
+    Provide your email, name, and a strong password. Accept the terms of service.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification link from Alves Redol Café and click it.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard, enter your credentials, and access your workspace.
+  </Step>
+</Steps>
+
+## Create a New Documentation Space
+
+Spaces organize your project docs. Create one for your first project.
+
+<Steps>
+  <Step title="Click New Space" icon="plus">
+    In the dashboard, select **New Documentation Space**.
+  </Step>
+  <Step title="Name Your Space" icon="edit-3">
+    Enter a name like `My Project Docs` and add a brief description.
+  </Step>
+  <Step title="Choose Template" icon="file-text">
+    Select the **MDX Documentation** template for pre-configured pages.
+  </Step>
+  <Step title="Publish Space" icon="globe">
+    Click **Create**. Your space is now live at a unique URL.
+  </Step>
+</Steps>
+
+## Upload Initial Project Files
+
+Add your existing docs or MDX files to the space.
+
+<Tabs>
+  <Tab title="Drag & Drop" icon="upload">
+    Open your space editor, drag files from your desktop into the file panel.
+    
+    Supported formats: `.mdx`, `.md`, `.json`, images (PNG, SVG).
+  </Tab>
+  <Tab title="CLI Upload" icon="terminal">
+    Use the Alves Redol Café CLI for batch uploads.
+    
+    <CodeGroup tabs="Install,Upload">
+    ````bash
+    npm install -g @alvesredol/cli
+    ````
+    
+    ````bash
+    alvesredol upload --space="My Project Docs" --path="./docs/*.mdx"
+    ````
+    </CodeGroup>
+  </Tab>
+  <Tab title="API" icon="api">
+    Programmatically upload via REST API.
+    
+    <Request tabs="cURL,JavaScript">
+    ````bash
+    curl -X POST https://api.example.com/v1/spaces/{spaceId}/files \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -F "file=@README.mdx"
+    ````
+    
+    ````javascript
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+    
+    fetch(`https://api.example.com/v1/spaces/${spaceId}/files`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${YOUR_API_KEY}` },
+      body: formData
+    });
+    ````
+    </Request>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Start with a `quick-start.mdx` file to mirror this guide.
+</Callout>
+
+## Basic Interface Tour
+
+Explore the main sections of your documentation space.
+
+<Columns cols={3}>
+  <Card title="Editor" icon="edit-3" href="#editor-section">
+    Real-time MDX editor with live preview and component autocomplete.
+  </Card>
+  <Card title="File Manager" icon="folder" href="#files-section">
+    Organize pages, upload assets, and manage versions.
+  </Card>
+  <Card title="Preview" icon="eye" href="#preview-section">
+    Full-site preview with custom domains and SEO settings.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Customize Themes" icon="palette" href="/configuration">
+    Learn to apply your brand colors like `#3B82F6`.
+  </Card>
+  <Card title="Advanced Features" icon="sparkles" href="/introduction">
+    Dive into authentication and collaboration tools.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Upload fails?** Check file size limits (`<10MB` per file).
+  - **Space not visible?** Refresh after 30 seconds.
+  - Contact support at `support@example.com`.
+</Expandable>

@@ -1,0 +1,104 @@
+---
+title: Introduction to Alves Redol Café
+description: Discover Alves Redol Café, your default documentation space for organizing and managing project documentation efficiently.
+---
+
+## Overview
+
+Alves Redol Café provides a centralized hub for your project documentation. You create, organize, and collaborate on docs with ease. Use it to build knowledge bases, API references, and user guides that scale with your team.
+
+<Callout kind="info">
+  Alves Redol Café uses brand color `#3B82F6` for primary elements. Apply it consistently in custom themes and embeds.
+</Callout>
+
+## Key Features
+
+Organize your documentation effectively with these core capabilities.
+
+<Columns cols={3}>
+  <Card title="Hierarchical Pages" icon="layout" href="#hierarchical-pages">
+    Nest pages and sections intuitively. Create unlimited subpages for complex projects.
+  </Card>
+  <Card title="Real-time Collaboration" icon="users" href="#collaboration">
+    Edit docs simultaneously with your team. See changes live and resolve conflicts effortlessly.
+  </Card>
+  <Card title="Version History" icon="git-branch" href="#version-history">
+    Track every change. Revert to previous versions or compare edits side-by-side.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get up and running in minutes.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at `https://app.alvesredol.com/register` with your email.
+  </Step>
+  <Step title="New Space" icon="plus">
+    Click "New Space" and name it for your project, like "API Docs".
+  </Step>
+  <Step title="Add First Page" icon="file-plus">
+    Create a page titled "Introduction". Use the editor to add content.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Hit "Publish" to make your docs live. Share the URL with your team.
+  </Step>
+</Steps>
+
+## Quick Navigation
+
+Jump to essential sections.
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="rocket" href="/quickstart">
+    Detailed setup instructions and first project walkthrough.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your space with API keys and user roles.
+  </Card>
+  <Card title="Advanced Features" icon="sparkles" href="/features">
+    Explore embeds, custom domains, and integrations.
+  </Card>
+  <Card title="Changelog" icon="git-commit" href="/changelog">
+    Stay updated with the latest releases and improvements.
+  </Card>
+</Columns>
+
+## Brand Guidelines
+
+Follow these to maintain consistency.
+
+Use the primary brand color `#3B82F6` for buttons, links, and accents. Secondary colors include shades of gray for text.
+
+```css
+:root {
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+}
+```
+
+<Expandable title="Custom Theme Example" default-open="false">
+  Apply your theme via settings.
+
+  <CodeGroup tabs="CSS,JSON">
+  ```css
+  .doc-button {
+    background-color: var(--primary);
+    border-radius: 6px;
+    padding: 8px 16px;
+  }
+  ```
+  ```json
+  {
+    "theme": {
+      "primaryColor": "#3B82F6"
+    }
+  }
+  ```
+  </CodeGroup>
+</Expandable>
+
+<Callout kind="tip">
+  Ready to dive deeper? Start with the [Quickstart Guide](/quickstart) to build your first documentation space.
+</Callout>

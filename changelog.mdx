@@ -1,0 +1,132 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to Alves Redol Café with our version history.
+---
+
+## Recent Updates
+
+Stay informed about all changes to Alves Redol Café. You receive notifications in your dashboard at `https://dashboard.example.com` and via email for major releases.
+
+<Callout kind="info">
+  Subscribe to our RSS feed at `/changelog.xml` or follow us on GitHub for instant updates.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time order tracking dashboard with live updates for kitchen and pickup counters.
+- Introduced loyalty program API endpoints: `POST /api/loyalty/points` and `GET /api/loyalty/customers/{id}`.
+- New inventory alerts send webhooks to `https://your-webhook-url.com/webhook` when stock falls below thresholds.
+
+## Improvements
+
+- Optimized menu item search to reduce query time by 40%.
+- Enhanced mobile responsiveness for tablet-based point-of-sale terminals.
+
+## Bug Fixes
+
+- Fixed order duplicate submission issue during peak hours.
+- Resolved PDF receipt generation errors for special characters in customer names.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated payment processing with Stripe: Use `YOUR_STRIPE_KEY` in your config.
+- Added customer feedback collection via QR codes at tables.
+
+## Improvements
+
+- Dashboard charts now support custom date ranges.
+
+## Bug Fixes
+
+- Corrected shift report totals that were miscalculating overtime hours.
+- Patched authentication token refresh loop in the mobile app.
+
+<CodeGroup tabs="JavaScript,Python">
+````javascript
+// Example: Migrating to new payment endpoint
+const stripeCharge = await fetch('https://api.example.com/v1/payments/charge', {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${YOUR_TOKEN}` },
+  body: JSON.stringify({ amount: 1999, currency: 'usd' })
+});
+````
+````python
+# Example: Migrating to new payment endpoint
+import requests
+response = requests.post(
+    'https://api.example.com/v1/payments/charge',
+    headers={'Authorization': f'Bearer {YOUR_TOKEN}'},
+    json={'amount': 1999, 'currency': 'usd'}
+)
+````
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## New Features
+
+- Core café management: Order taking, table reservations, and staff scheduling.
+- Initial API rollout with endpoints like `GET /api/menu` and `POST /api/orders`.
+
+## Breaking Changes
+
+- Authentication now requires JWT tokens instead of API keys. Update your integrations:
+
+<Callout kind="alert">
+  Migrate from `api_key` to `Authorization: Bearer {YOUR_TOKEN}` header immediately.
+</Callout>
+
+## Bug Fixes
+
+- Initial release stability improvements.
+
+</Update>
+
+## Upcoming Roadmap
+
+Discover what's next for Alves Redol Café. You can vote on features in our feedback portal.
+
+<Columns cols={3}>
+  <Card title="AI Menu Suggestions" icon="zap" href="#">
+    Machine learning-powered recommendations based on sales data.
+  </Card>
+  <Card title="Multi-Location Support" icon="map-pin" href="#">
+    Manage multiple café branches from one dashboard.
+  </Card>
+  <Card title="Advanced Analytics" icon="bar-chart-3" href="#">
+    Predictive inventory and sales forecasting.
+  </Card>
+</Columns>
+
+## How to Check for Updates
+
+Follow these steps to ensure you always run the latest version.
+
+<Steps>
+  <Step title="Check Dashboard" icon="monitor">
+    Log in to `https://dashboard.example.com/updates` to view release notes.
+  </Step>
+  <Step title="Update SDK" icon="download">
+    Run the update command for your platform.
+  </Step>
+  <Step title="Test Integrations" icon="test-tube">
+    Verify your API calls work with the new endpoints.
+  </Step>
+</Steps>
+
+<Expandable title="Migration Guide for Breaking Changes" default-open="false">
+
+If you encounter issues after updating, review these common fixes:
+
+- Replace `api_key` queries with header auth.
+- Update webhook signatures using HMAC-SHA256 with `YOUR_SECRET`.
+
+</Expandable>
